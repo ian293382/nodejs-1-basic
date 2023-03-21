@@ -7,6 +7,9 @@ const booksRouter = require("./router/books.js");
 // about require
 const aboutRouter = require("./router/about.js");
 
+// hello require
+const helloRouter = require("./router/hello.js");
+
 app.get("/", (req,res) => {
   res.send("hihi, I'm NOde.js server.");
 });
@@ -18,6 +21,9 @@ app.use("/books", booksRouter);
 
 // app use about
 app.use("/about", aboutRouter);
+
+// app use hello
+app.use("/hello", helloRouter);
 
 
 app.listen(portNum , () => {
