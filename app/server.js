@@ -10,6 +10,8 @@ const aboutRouter = require("./router/about.js");
 // hello require
 const helloRouter = require("./router/hello.js");
 
+const introductionRouter = require("./router/introduction.js");
+
 app.get("/", (req,res) => {
   res.send("hihi, I'm NOde.js server.");
 });
@@ -24,6 +26,14 @@ app.use("/about", aboutRouter);
 
 // app use hello
 app.use("/hello", helloRouter);
+
+// app use introduction
+app.use("/introduction", introductionRouter);
+
+// 404 錯誤
+app.use((req,res)=>{
+  res.status(404).send("API 尚未開發!");
+});
 
 
 app.listen(portNum , () => {
